@@ -11,12 +11,12 @@ $ npm i react-combine-image
 
 # Import
 ```js
-import CombineImage from 'react-crop-center-image'
+import CombineImage from 'react-combine-image'
 ```
 
 # Example：place image to right bottom
 ```jsx
-import CombineImage from 'react-crop-center-image'
+import CombineImage from 'react-combine-image'
 import React from 'react'
 
 function Example() {
@@ -31,7 +31,10 @@ function Example() {
         y: '100%',
         tx: '-100%',
         ty: '-100%',
-        // ...props
+        rotate: 180,
+        width: 50,
+        height: '50%',
+        onDrawEnd={(ctx) => {}}
       }]}
     />
   )
@@ -41,15 +44,15 @@ export default Example
 ```
 
 `CombineImage` component available properties:
-Property           | Description  |
---------------|:-----:|
-images    | An array, details in below. |
-ref     | Same as React ref, it could get the canvas ref. |
-
+Type | Name           | Description  |
+--------------|-----|---|
+Property | images    | An array, details in below. |
+Property | ref     | Same as React ref, it could get the canvas ref. |
+Event | onDrawEnd(ctx)    | callback after drawing the image |
 
 `images` available properties for every object:
 Property           | Description  |
---------------|:-----:|
+--------------|-----|
 src    | Source path to be combined. |
 scale | An array, scale by axis [x, y], 1=100% |
 x | X-axis offset, relative by canvas. |
@@ -59,9 +62,3 @@ ty | Y-axis offset, relative by source image. |
 width| Width of image |
 height| Height of image |
 rotate | Rotate deg of image |
-
-
-`CombineImage` component available events:
-Event           | Description  |
---------------|:-----:|
-onDrawEnd(ctx)    | callback after drawing the image |
