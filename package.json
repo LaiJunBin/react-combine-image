@@ -1,6 +1,6 @@
 {
   "name": "react-combine-image",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The package can combine multiple images into one image, based on canvas.",
   "keywords": [
     "react",
